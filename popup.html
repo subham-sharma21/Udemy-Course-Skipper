@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    body {
+      width: 250px;
+      font-family: 'Poppins', sans-serif;
+      background-color: #121212;
+      color: white;
+      padding: 15px;
+      text-align: center;
+      overflow: hidden;
+    }
+    #particle-canvas {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: -1;
+      pointer-events: none;
+    }
+    .container {
+      position: relative;
+      z-index: 1;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 15px;
+    }
+    h3 {
+      margin: 0;
+      font-size: 20px;
+      font-weight: 600;
+      color: #a435f0;
+    }
+    .setting-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      width: 100%;
+    }
+    .switch {
+      position: relative;
+      display: inline-block;
+      width: 50px;
+      height: 28px;
+    }
+    .switch input {
+      opacity: 0;
+      width: 0;
+      height: 0;
+    }
+    .slider {
+      position: absolute;
+      cursor: pointer;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background-color: #ccc;
+      transition: .4s;
+      border-radius: 34px;
+    }
+    .slider:before {
+      position: absolute;
+      content: "";
+      height: 20px;
+      width: 20px;
+      left: 4px;
+      bottom: 4px;
+      background-color: white;
+      transition: .4s;
+      border-radius: 50%;
+    }
+    input:checked + .slider {
+      background-color: #a435f0;
+    }
+    input:checked + .slider:before {
+      transform: translateX(22px);
+    }
+    select, input[type="number"] {
+      background-color: #333;
+      color: white;
+      border: 1px solid #555;
+      border-radius: 5px;
+      padding: 5px;
+    }
+  </style>
+</head>
+<body>
+  <canvas id="particle-canvas"></canvas>
+  <div class="container">
+    <h3>Udemy Skipper</h3>
+    <div class="setting-row">
+      <span>Extension Enabled</span>
+      <label class="switch">
+        <input type="checkbox" id="toggleSwitch">
+        <span class="slider"></span>
+      </label>
+    </div>
+    <div class="setting-row">
+      <label for="playbackSpeed">Playback Speed</label>
+      <select id="playbackSpeed">
+        <option value="1">1x</option>
+        <option value="1.25">1.25x</option>
+        <option value="1.5">1.5x</option>
+        <option value="1.75">1.75x</option>
+        <option value="2">2x</option>
+      </select>
+    </div>
+    <div class="setting-row">
+      <label for="skipDuration">Skip to last (sec)</label>
+      <input type="number" id="skipDuration" min="1" max="30" value="2">
+    </div>
+    <div class="setting-row">
+      <span>Auto-Mark as Complete</span>
+      <label class="switch">
+        <input type="checkbox" id="autoCompleteSwitch">
+        <span class="slider"></span>
+      </label>
+    </div>
+    <p><small>The ultimate Udemy course companion.</small></p>
+  </div>
+  <script src="popup.js"></script>
+</body>
+</html>

@@ -1,0 +1,12 @@
+Playback Speed Control: Add an option in the popup to set a preferred playback speed (e.g., 1.25x, 1.5x, 2x) that automatically applies to all videos in the course.
+
+Automatic "Mark as Complete": The extension could automatically click the "Mark as Complete" button for each lecture after the video finishes playing, further automating course progression.
+
+Distraction-Free Mode: A feature to hide distracting elements on the page, such as the Q&A section, instructor announcements, and other sidebars, allowing for a more focused learning experience.
+
+Customizable Skip Duration: Instead of a fixed 2-second skip, you could allow users to customize the skip time from the popup menu (e.g., skip to the last 5 seconds, 10 seconds, etc.).
+
+Intelligent Quiz Solver: Enhance the quiz solver to do more than just select the first option. You could add options to:
+
+Select answers randomly.
+Allow the user to specify which option to always select (e.g., A, B, C).

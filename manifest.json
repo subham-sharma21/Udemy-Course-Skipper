@@ -1,0 +1,16 @@
+{
+  "manifest_version": 3,
+  "name": "Udemy Auto Skipper",
+  "version": "1.0",
+  "description": "Skips Udemy videos to the last 2 seconds automatically.",
+  "permissions": ["storage"],
+  "action": {
+    "default_popup": "popup.html"
+  },
+  "content_scripts": [
+    {
+      "matches": ["https://*.udemy.com/course/*"],
+      "js": ["content.js"]
+    }
+  ]
+}
